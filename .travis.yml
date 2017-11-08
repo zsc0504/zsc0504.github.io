@@ -8,7 +8,7 @@ before_install:
 before_script:
 - git config --global user.name "Songchao"
 - git config --global user.email zhangsongchao0504@gmail.com
-- sed -i'' "s~git@github.com:zsc0504/zsc0504.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/zsc0504/zsc0504.gihub.io.git~" _config.yml
+- sed -i'' "s~git@github.com:zsc0504/zsc0504.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/zsc0504/zsc0504.github.io.git~" _config.yml
 script:
 - hexo clean
 - hexo generate
