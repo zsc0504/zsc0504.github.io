@@ -36,10 +36,12 @@ Swift 的 string 替代了之前 OC 中的 NSString，但是取子串的方法�
             return nil
         }
         set {
-            if let subStr = newValue {
-                if let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound, limitedBy: self.endIndex),
-                    let endIndex = self.index(self.startIndex, offsetBy: range.upperBound, limitedBy: self.endIndex) {
+        	  if let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound, limitedBy: self.endIndex),
+                let endIndex = self.index(self.startIndex, offsetBy: range.upperBound, limitedBy: self.endIndex) {
+                if let subStr = newValue {
                     self.replaceSubrange(startIndex ... endIndex, with: subStr)
+                }else {
+                    self.removeSubrange(startIndex ... endIndex)
                 }
             }else {
                 print("index out of bounds")
